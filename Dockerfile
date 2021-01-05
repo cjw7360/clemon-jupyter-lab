@@ -27,6 +27,8 @@ RUN cat $HOME/.condarc && conda clean -i \
     'jupyterlab-topbar-text' \
     'jupyterlab-logout' \
     'jupyterlab-theme-toggle' \
+    '@deathbeds/jupyterlab-fonts' \
+    '@deathbeds/jupyterlab-font-dejavu-sans-mono' \
     && jupyter lab build --dev-build=False --minimize=True \
     && conda clean --all -f -y \
     && rm -rf \
