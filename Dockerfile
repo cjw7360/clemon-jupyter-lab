@@ -18,6 +18,15 @@ RUN cat $HOME/.condarc && conda clean -i \
     '@krassowski/jupyterlab-lsp' \
     '@ryantam626/jupyterlab_code_formatter' \
     '@jupyterlab/git' \
+    '@jupyterlab/debugger' \
+    '@jupyterlab/toc-extension' \
+    'jupyterlab-theme-solarized-dark' \
+    'jupyterlab_onedarkpro' \
+    'jupyterlab-topbar-extension' \
+    'jupyterlab-system-monitor' \
+    'jupyterlab-topbar-text' \
+    'jupyterlab-logout' \
+    'jupyterlab-theme-toggle' \
     && jupyter lab build --dev-build=False --minimize=True \
     && conda clean --all -f -y \
     && rm -rf \
