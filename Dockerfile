@@ -14,12 +14,15 @@ RUN cat $HOME/.condarc && conda clean -i \
     'jupyter-lsp' \
     'jupyterlab_code_formatter' \
     'jupyterlab-git' \
+    'numpy' \
+    'scipy' \
+    'matplotlib' \
+    'ipympl' \
     && jupyter labextension install --no-build \
     '@krassowski/jupyterlab-lsp' \
     '@ryantam626/jupyterlab_code_formatter' \
     '@jupyterlab/git' \
     '@jupyterlab/debugger' \
-    '@jupyterlab/toc-extension' \
     'jupyterlab-theme-solarized-dark' \
     'jupyterlab_onedarkpro' \
     'jupyterlab-topbar-extension' \
@@ -29,6 +32,8 @@ RUN cat $HOME/.condarc && conda clean -i \
     'jupyterlab-theme-toggle' \
     '@deathbeds/jupyterlab-fonts' \
     '@deathbeds/jupyterlab-font-dejavu-sans-mono' \
+    '@jupyter-widgets/jupyterlab-manager' \
+    'jupyter-matplotlib' \
     && jupyter lab build --dev-build=False --minimize=True \
     && conda clean --all -f -y \
     && rm -rf \
