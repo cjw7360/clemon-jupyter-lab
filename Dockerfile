@@ -35,3 +35,5 @@ RUN cat $HOME/.condarc && conda clean -i \
     && fix-permissions $CONDA_DIR \
     && fix-permissions /home/$NB_USER \
     && jupyter serverextension enable --py jupyterlab_code_formatter
+
+VOLUME [ "/home/jovyan/work/" ]
