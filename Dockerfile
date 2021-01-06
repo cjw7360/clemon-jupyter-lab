@@ -1,12 +1,11 @@
 FROM jupyter/minimal-notebook
 
-RUN conda config --set show_channel_urls yes
-
 COPY --chown=1000:1000 .condarc /home/jovyan/
 
-RUN cat $HOME/.condarc && conda clean -i \
+RUN conda clean -i \
     && conda install --quiet --yes --freeze-installed -c conda-forge \
     'nodejs' \
+    'yarn' \
     'python-language-server' \
     'jupyterlab=2.2.9' \
     'texlab' \
@@ -18,6 +17,8 @@ RUN cat $HOME/.condarc && conda clean -i \
     'scipy' \
     'matplotlib' \
     'ipympl' \
+    && npm config set registry https://registry.npm.taobao.org \
+    && yarn config set registry https://registry.npm.taobao.org/ \
     && jupyter labextension install --no-build \
     '@krassowski/jupyterlab-lsp' \
     '@ryantam626/jupyterlab_code_formatter' \
