@@ -9,7 +9,7 @@ RUN conda install --quiet --yes --freeze-installed -c conda-forge \
     'texlab' \
     'chktex' \
     'jupyter-lsp=1.0.0' \
-    'jupyterlab_code_formatter=1.3.8' \
+    'jupyterlab_code_formatter=1.4.1' \
     'numpy' \
     'scipy' \
     'matplotlib' \
@@ -20,7 +20,7 @@ RUN jupyter labextension update -y --all --no-build
 
 RUN jupyter labextension install --no-build \
     '@krassowski/jupyterlab-lsp@3.0.0' \
-    '@ryantam626/jupyterlab_code_formatter@1.3.8' \
+    '@ryantam626/jupyterlab_code_formatter@1.4.1' \
     # 'jupyterlab-execute-time' \ 
     && jupyter labextension install --no-build \
     'jupyterlab-theme-solarized-dark' \
