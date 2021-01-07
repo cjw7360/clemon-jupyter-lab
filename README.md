@@ -7,8 +7,9 @@
 
 ## How to get a new conda env
 ```
-conda create -n new_env_name python=3.x ipykernel
+conda create -n new_env_name python=3.x
 conda activate new_env_name
+conda install -y -c conda-forge ipykernel ipympl matplotlib
 ipython kernel install --user --name new_env_name --display-name "name_to_display"
 ```
 
