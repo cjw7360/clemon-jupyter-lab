@@ -36,13 +36,13 @@ RUN jupyter labextension install --no-build \
     '@jupyter-widgets/jupyterlab-manager' \
     'jupyter-matplotlib@0.7.4' \
     && jupyter lab build --dev-build=False --minimize=True \
+    && jupyter serverextension enable --py jupyterlab_code_formatter \
+    && jupyter nbextension enable --py widgetsnbextension \
     && conda clean --all -f -y \
     && rm -rf \
     $CONDA_DIR/share/jupyter/lab/staging \
     /home/$NB_USER/.cache/yarn \
     && fix-permissions $CONDA_DIR \
-    && fix-permissions /home/$NB_USER \
-    && jupyter serverextension enable --py jupyterlab_code_formatter \
-    && jupyter nbextension enable --py widgetsnbextension
+    && fix-permissions /home/$NB_USER
 
 VOLUME [ "/home/jovyan/work/" ]
