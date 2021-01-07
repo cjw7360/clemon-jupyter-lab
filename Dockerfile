@@ -15,9 +15,9 @@ RUN conda install --quiet --yes --freeze-installed -c conda-forge \
     'scipy' \
     'matplotlib==3.3.1' \
     'ipympl==0.5.8' \
-    'yarn' \
-    'xeus-python=0.8.6' \
-    'ptvsd'
+    'yarn'
+    # 'xeus-python=0.8.6'
+    # 'ptvsd'
 
 RUN jupyter labextension install --no-build \
     '@krassowski/jupyterlab-lsp' \
