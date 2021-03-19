@@ -1,0 +1,3 @@
+http://aria.dev-node-01.cjw {
+    reverse_proxy / jupyterlab:8888
+}

@@ -19,5 +19,5 @@ services:
     depends_on:
       - jupyterlab
     volumes:
-      - caddyfile:somepath
+      - ./Caddyfile:/etc/caddy/Caddyfile
     
