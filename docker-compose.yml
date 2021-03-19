@@ -1,13 +1,23 @@
 version: '3'
 
 services:
-  jupyter:
-    build: .
-    image: clemon-jupyter:latest
+  jupyterlab:
+    image: jupyter/scipy-notebook:latest
     restart: always
     ports:
-      - 8888:8888
+      - 8888
     volumes:
-      - ./work/:/home/jovyan/work/
+      - ./work/:/home/clemon/
     environment:
       - JUPYTER_ENABLE_LAB=yes
+      - NB_USER=clemon
+      - CHOWN_HOME=yes
+      - GRANT_SUDO=yes
+  caddy: 
+    image: caddy
+    restart: always
+    depends_on:
+      - jupyterlab
+    volumes:
+      - caddyfile:somepath
+    
