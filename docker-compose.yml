@@ -7,7 +7,7 @@ services:
     ports:
       - 8888
     volumes:
-      - ./work/:/home/clemon/
+      - /home/clemon/work/:/home/clemon/work
     user: root
     environment:
       - JUPYTER_ENABLE_LAB=yes
